@@ -1,0 +1,9 @@
+Requirement already satisfied: protobuf in /home/zk203/deep_learning/anaconda3/envs/yolov5/lib/python3.8/site-packages (3.19.4)
+Collecting protobuf
+  Downloading protobuf-3.20.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
+Installing collected packages: protobuf
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 3.19.4
+    Uninstalling protobuf-3.19.4:
+      Successfully uninstalled protobuf-3.19.4
+Successfully installed protobuf-3.20.0
