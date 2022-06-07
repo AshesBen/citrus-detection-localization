@@ -5,8 +5,8 @@
 ### What we are doing and going to do
 
 - [x] Upload the citrus dataset. [Google Drive](https://drive.google.com/drive/folders/1VfC0dWsXjhxyKIeAVNtHsxxjXx_2VvV6?usp=sharing)
-- [x] Provide Reference image. [Google Drive](https://drive.google.com/drive/folders/1VfC0dWsXjhxyKIeAVNtHsxxjXx_2VvV6?usp=sharing)
-- [x] Provide checkpoint model.[Google Drive](https://drive.google.com/drive/folders/1VfC0dWsXjhxyKIeAVNtHsxxjXx_2VvV6?usp=sharing)
+- [x] Provide Reference image. [Google Drive](https://drive.google.com/drive/folders/1WI8MLjfluK4yRvohTHER1vdUa6WZ5M3l?usp=sharing)
+- [x] Provide checkpoint model.(In releases)
 - [x] Provide detection code.
 - [ ] Provide localization code.
 
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 * val: ./detection/data/RGB/val/images
 * test: ./detection/data/RGB/test/images 
 
-* Secondly, download the pretrain weight of yolov5s in release, and move it into ./detection/
+* Secondly, download the pretrain weight of yolov5s in releases, and move it into ./detection/
 
 * Finally, open the ./detection/train.py, and select the different loss function in --hyp.
 * Such as:
