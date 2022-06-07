@@ -3,7 +3,7 @@ import json
 import  numpy as np
 
 classes = ['0']
-# 初始化二维0数组
+
 result_list = np.array(np.zeros([len(classes), len(classes)]))
 
 
@@ -70,7 +70,7 @@ def read_detlabel_txt(full_label_name):
         object_list.append(obj_info)
     return object_list
 
-# 计算交集面积
+
 def intersection_area(label_box, detect_box):
     
     x_label_min, y_label_min, x_label_max, y_label_max = label_box
@@ -83,7 +83,7 @@ def intersection_area(label_box, detect_box):
         return lens * wide
 
 
-# 计算并集面积
+
 def union_area(label_box, detect_box):
 
     x_label_min, y_label_min, x_label_max, y_label_max = label_box
@@ -98,13 +98,12 @@ def union_area(label_box, detect_box):
     return area_union
 
 
-# label 匹配 detect
+
 def label_match_detect(label_list, detect_list):
 
-    #IOU阈值值设置
+
     iou_threshold = 0.5
 
-    #true_positive_list:存储识别正确的对象，false_positive_list存储识别错误的对象
     true_positive_list = []
     false_positive_list = []
         
@@ -121,7 +120,7 @@ def label_match_detect(label_list, detect_list):
 
             iou = i_area / u_area
 
-            #只统计最大IOU的预测对象
+ 
             if temp_iou < iou:
                 temp_iou = iou
             
@@ -141,8 +140,8 @@ def main():
     count_prec = 0.0
     count_recall = 0.0
     recall = 0
-    detect_path = r'/home/zk203/zxd/yolov5-master/runs/detect/exp10/labels/'    # 预测的数据
-    label_path = r'/home/zk203/zxd/yolov5-master/data/971_test_data/all/labels/'  # 标注文件路径
+    detect_path = ''    
+    label_path = ''  
     
     all_label = os.listdir(detect_path)
 
@@ -151,16 +150,15 @@ def main():
     for i in range(len(all_label)):
         
         full_detect_path = os.path.join(detect_path, all_label[i])
-        # 分离文件名和文件后缀
+
         label_name, label_extension = os.path.splitext(all_label[i])
-        # print (label_name)
-        # 拼接标注路径
+
         full_label_path = os.path.join(label_path, label_name + '.txt')
         full_detect_path = os.path.join(detect_path, label_name + '.txt')
-        # 读取标注数据
+     
         if os.path.exists(full_detect_path) == True:
             label_list = read_label_txt(full_label_path)
-            # 标注数据匹配detect
+         
             detect_list = read_label_txt(full_detect_path)
 
             tp_lst, fp_lst,lb_lst = label_match_detect(label_list, detect_list)
@@ -199,8 +197,6 @@ def main():
         count_prec += prec
         count_recall += recall
 
-    # print('tp: ',count_tp,'fp: ',count_fp,'fn: ',count_fn)
-    # print('pre: ',prec,'recall: ',recall)
 
     print('tp: ',count_tp,'fn: ',count_fn)
     print('recall: ',recall)
