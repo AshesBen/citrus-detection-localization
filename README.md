@@ -1,5 +1,10 @@
 # The code of Detection and localization of citrus fruit based on improved YOLO v5s and binocular vision in the orchard.
 
+# Please cite:
+#{
+#   Hou C, Zhang X, Tang Y, Zhuang J, Tan Z, Huang H, Chen W, Wei S, He Y and Luo S (2022) Detection and localization of citrus fruit based on improved You Only Look Once v5s and binocular vision in the orchard. Front. Plant Sci. 13:972445. doi: 10.3389/fpls.2022.972445
+#}
+
 ![Image](detection/2Dbbox.png) ![Image](detection/3Dbbox.png)
 
 ### What we are doing and going to do
